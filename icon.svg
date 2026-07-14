@@ -1,7 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="DC Circuits">
-  <rect width="128" height="128" rx="24" fill="#0d47a1"/>
-  <path d="M28 64h18l8-22 12 44 10-28 8 14h16" fill="none" stroke="#ffeb3b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="28" cy="64" r="6" fill="#90caf9"/>
-  <circle cx="100" cy="72" r="6" fill="#90caf9"/>
-  <text x="64" y="112" text-anchor="middle" font-size="14" font-family="Segoe UI,Arial,sans-serif" fill="#90caf9" font-weight="700">DC</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Circuits">
+  <rect width="128" height="128" rx="24" fill="#1565c0"/>
+  <path d="M40 64h20l8-16 12 32 8-16h20" stroke="#ffab40" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="40" cy="64" r="6" fill="#90caf9"/>
+  <circle cx="108" cy="64" r="6" fill="#90caf9"/>
 </svg>

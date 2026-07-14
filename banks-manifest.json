@@ -1,12 +1,14 @@
 {
-  "version": "circuits-dc-v1-2026",
+  "version": "circuits1-v1-2026",
   "banks": {
     "reviewer": {
-      "label": "DC Circuits Reviewer",
+      "label": "Circuits 1",
       "file": "questions.js",
-      "global": "CIRCUITS_DC_QB",
-      "description": "Electrical Circuits 1 (Part 1) \u2014 Direct Current Circuits",
-      "count": 173
+      "global": "CIRCUITS_QB",
+      "formulas": "formulas.js",
+      "description": "Electrical Circuits 1 — MCQs + Formula Bank + Lecture Text",
+      "count": 37,
+      "formulaCount": 19
     }
   }
 }

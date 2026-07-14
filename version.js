@@ -1,2 +1,2 @@
-/** Bump when questions.js or bank changes (cache-bust + UI label). */
-window.APP_BANK_VERSION = 'circuits-dc-v1-2026';
+/** Bump when bank changes. */
+window.APP_BANK_VERSION = 'circuits1-v1-2026';

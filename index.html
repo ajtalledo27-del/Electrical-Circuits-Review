@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, minimum-scale=1.0">
-<!-- Electrical Circuits 1 (Part 1) — DC Circuits Reviewer -->
-<title>Electrical Circuits 1 — Reviewer &amp; Quiz Bee</title>
-<meta name="description" content="Electrical Circuits 1 (Part 1) — Direct Current Circuits offline reviewer and quiz bee">
+<!-- Production: https://joshuagutierrez369.github.io/E-C-T-Boards-Review/ -->
+<title>Electrical Circuits 1 — Reviewer, Formula Bank &amp; Quiz</title>
+<meta name="description" content="Electrical Circuits 1 reviewer — Ohm's law, KVL, KCL, series/parallel, mesh & nodal analysis, formula bank and quiz bee">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="DC Circuits">
+<meta name="apple-mobile-web-app-title" content="Circuits">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#0d47a1">
+<meta name="theme-color" content="#1565c0">
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -25,18 +25,18 @@ body.dark nav#toc{background:#0d1117}
 body.dark .psi{background:#1e1e2e;border-color:#333}
 body.dark .q{border-bottom-color:#2a2a3e}
 body.dark #st{background:#1e1e2e;border-color:#333}
-body.dark .expl{background:#0d2044;border-left-color:#3f51b5;color:#90caf9}
+body.dark .expl{background:#0d2044;border-left-color:#1976d2;color:#90caf9}
 body.dark .sol{background:#2c1a00;border-left-color:#ff8f00;color:#ffe0b2}
 body.dark .concept-card{border-color:#333}
 body.dark .concept-toggle{background:#1e1e2e;color:#90caf9}
 body.dark .concept-body{background:#111;color:#cfd8dc}
-body.dark .concept-body code{background:#1e1e2e;color:#a5d6a7}
-body.dark .formula-box{background:#0d47a1;border-color:#3949ab;color:#90caf9}
+body.dark .concept-body code{background:#1e1e2e;color:#ffcc80}
+body.dark .formula-box{background:#1565c0;border-color:#3949ab;color:#90caf9}
 body.dark .concept-body h4{color:#90caf9}
 body.dark .concept-body ul li{color:#cfd8dc}
 body.dark .svg-wrap svg{border-radius:8px}
 /* Sidebar */
-nav#toc{position:fixed;top:0;left:0;width:240px;height:100vh;overflow-y:auto;background:#0d47a1;color:#fff;padding:16px 0;z-index:100;display:flex;flex-direction:column}
+nav#toc{position:fixed;top:0;left:0;width:240px;height:100vh;overflow-y:auto;background:#1565c0;color:#fff;padding:16px 0;z-index:100;display:flex;flex-direction:column}
 nav#toc h2{font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:0 16px 10px;border-bottom:1px solid rgba(255,255,255,.2);color:#90caf9;flex-shrink:0}
 nav#toc .toc-scroll{flex:1;overflow-y:auto}
 nav#toc ul{list-style:none;padding:6px 0}
@@ -45,61 +45,61 @@ nav#toc li a:hover{background:rgba(255,255,255,.1);color:#fff;border-left-color:
 nav#toc li.gh>a{color:#90caf9;font-weight:700;font-size:10px;text-transform:uppercase;padding-top:10px}
 .toc-btns{padding:10px 12px;border-top:1px solid rgba(255,255,255,.15);flex-shrink:0;display:flex;flex-direction:column;gap:6px}
 .toc-btns button{padding:8px;border:none;border-radius:7px;cursor:pointer;font-size:12px;font-weight:700;transition:all .2s;width:100%}
-.btn-reviewer{background:#283593;color:#90caf9}.btn-reviewer:hover{background:#3f51b5;color:#fff}
-.btn-quiz{background:#1b5e20;color:#a5d6a7}.btn-quiz:hover{background:#2e7d32;color:#fff}
+.btn-reviewer{background:#0d47a1;color:#90caf9}.btn-reviewer:hover{background:#1976d2;color:#fff}
+.btn-quiz{background:#e65100;color:#ffcc80}.btn-quiz:hover{background:#ef6c00;color:#fff}
 .btn-dark{background:#333;color:#ccc}.btn-dark:hover{background:#555;color:#fff}
 /* Topbar */
 .topbar{background:#fff;border-bottom:2px solid #e8eaf6;padding:8px 20px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:90;min-width:0;width:100%;box-sizing:border-box}
-.topbar .mode-badge{font-size:11px;font-weight:800;color:#3f51b5;background:#e8eaf6;padding:3px 11px;border-radius:20px;white-space:nowrap}
-.topbar input{flex:1;padding:7px 13px;border:2px solid #c5cae9;border-radius:8px;font-size:13px;outline:none;transition:border-color .2s}
-.topbar input:focus{border-color:#3f51b5}
-#bank-select{padding:6px 10px;border:2px solid #c5cae9;border-radius:8px;font-size:12px;font-weight:700;color:#0d47a1;background:#fff;max-width:210px;cursor:pointer}
+.topbar .mode-badge{font-size:11px;font-weight:800;color:#1976d2;background:#e8eaf6;padding:3px 11px;border-radius:20px;white-space:nowrap}
+.topbar input{flex:1;padding:7px 13px;border:2px solid #bbdefb;border-radius:8px;font-size:13px;outline:none;transition:border-color .2s}
+.topbar input:focus{border-color:#1976d2}
+#bank-select{padding:6px 10px;border:2px solid #bbdefb;border-radius:8px;font-size:12px;font-weight:700;color:#1565c0;background:#fff;max-width:210px;cursor:pointer}
 body.dark #bank-select{background:#1e1e2e;color:#90caf9;border-color:#444}
 .src-badge{display:inline-block;font-size:10px;font-weight:700;color:#5c6bc0;background:#e8eaf6;padding:2px 8px;border-radius:10px;margin-bottom:6px}
-body.dark .src-badge{background:#283593;color:#90caf9}
+body.dark .src-badge{background:#0d47a1;color:#90caf9}
 #mc{font-size:12px;color:#888;white-space:nowrap;min-width:0}
 main{margin-left:240px;flex:1 1 auto;display:flex;flex-direction:column;min-width:0}
 .main-content{padding:20px;max-width:1080px;width:100%;min-width:0;box-sizing:border-box}
 /* Stats */
-#st{background:#fff;border:1px solid #c5cae9;border-radius:10px;padding:14px 20px;margin-bottom:20px;display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start;min-width:0}
+#st{background:#fff;border:1px solid #bbdefb;border-radius:10px;padding:14px 20px;margin-bottom:20px;display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start;min-width:0}
 #st .stat{min-width:0;flex:1 1 auto}
-#st .sn{font-size:26px;font-weight:700;color:#0d47a1}
+#st .sn{font-size:26px;font-weight:700;color:#1565c0}
 #st .sl{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.4px}
 /* Sections */
 section.ps{margin-bottom:32px}
-section.ps h2{background:linear-gradient(135deg,#0d47a1,#283593);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-size:14px;letter-spacing:.4px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;min-width:0}
+section.ps h2{background:linear-gradient(135deg,#1565c0,#0d47a1);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-size:14px;letter-spacing:.4px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;min-width:0}
 section.ps h2 .bc{flex-shrink:0;margin-left:auto}
-.psi{background:#fff;border:1px solid #c5cae9;border-top:none;border-radius:0 0 8px 8px;padding:16px;min-width:0;overflow-x:hidden}
+.psi{background:#fff;border:1px solid #bbdefb;border-top:none;border-radius:0 0 8px 8px;padding:16px;min-width:0;overflow-x:hidden}
 .bc{background:rgba(255,255,255,.25);border-radius:20px;padding:2px 10px;font-size:11px;font-weight:400}
 /* Concept card */
-.concept-card{margin-bottom:16px;border:1px solid #c5cae9;border-radius:8px;overflow:hidden}
-.concept-toggle{width:100%;text-align:left;padding:9px 14px;background:#eef0fb;border:none;cursor:pointer;font-size:12.5px;font-weight:700;color:#0d47a1;display:flex;justify-content:space-between;align-items:center}
-.concept-toggle:hover{background:#c5cae9}
-.concept-body{display:none;padding:14px 16px;font-size:12.5px;line-height:1.65;background:#f8f9ff;border-top:1px solid #c5cae9;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.concept-card{margin-bottom:16px;border:1px solid #bbdefb;border-radius:8px;overflow:hidden}
+.concept-toggle{width:100%;text-align:left;padding:9px 14px;background:#e3f2fd;border:none;cursor:pointer;font-size:12.5px;font-weight:700;color:#1565c0;display:flex;justify-content:space-between;align-items:center}
+.concept-toggle:hover{background:#bbdefb}
+.concept-body{display:none;padding:14px 16px;font-size:12.5px;line-height:1.65;background:#e8f4fd;border-top:1px solid #bbdefb;overflow-x:auto;-webkit-overflow-scrolling:touch}
 .concept-body.open{display:block}
 .concept-body svg,.psi svg{max-width:100%;height:auto!important;display:block}
-.concept-body h4{color:#0d47a1;margin:10px 0 5px;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.concept-body h4{color:#1565c0;margin:10px 0 5px;font-size:12px;text-transform:uppercase;letter-spacing:.5px}
 .concept-body ul{margin-left:18px;margin-bottom:6px}
-.concept-body code{background:#e8eaf6;color:#0d47a1;padding:1px 5px;border-radius:3px;font-size:12px;font-family:'Courier New',monospace}
+.concept-body code{background:#e8eaf6;color:#1565c0;padding:1px 5px;border-radius:3px;font-size:12px;font-family:'Courier New',monospace}
 .concept-body .formula-row{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0}
-.formula-box{background:#e8eaf6;border:1px solid #c5cae9;border-radius:6px;padding:6px 12px;font-family:'Courier New',monospace;font-size:12px;color:#0d47a1;overflow-wrap:anywhere;max-width:100%}
+.formula-box{background:#e8eaf6;border:1px solid #bbdefb;border-radius:6px;padding:6px 12px;font-family:'Courier New',monospace;font-size:12px;color:#1565c0;overflow-wrap:anywhere;max-width:100%}
 .svg-wrap{display:flex;justify-content:center;margin:10px 0;overflow-x:auto}
 /* Questions */
 .q{border-bottom:1px solid #eceff1;padding:12px 0;transition:background .2s;min-width:0}
 .q:last-child{border-bottom:none}
 .qh{display:flex;align-items:flex-start;gap:8px;min-width:0}
-.qn{background:#3f51b5;color:#fff;border-radius:50%;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;flex-shrink:0;margin-top:2px}
+.qn{background:#1976d2;color:#fff;border-radius:50%;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:11px;flex-shrink:0;margin-top:2px}
 .qt{font-weight:500;line-height:1.55;flex:1 1 auto;min-width:0;overflow-wrap:break-word;word-wrap:break-word}
 .ch{list-style:none;margin:8px 0 0 34px;padding:0;min-width:0}
 .ch li{padding:5px 9px;border-radius:6px;margin-bottom:3px;font-size:13px;line-height:1.4;border:1.5px solid transparent;transition:background .15s;overflow-wrap:break-word;word-break:break-word}
-.ch li.ok{background:#e8f5e9;border-color:#a5d6a7;font-weight:700;color:#1b5e20}
+.ch li.ok{background:#e8f5e9;border-color:#ffcc80;font-weight:700;color:#e65100}
 .ch li.ok::before{content:"✓ "}
 .sol{margin:8px 0 0 34px;background:#fff8e1;border-left:4px solid #ffc107;padding:8px 12px;border-radius:0 5px 5px 0;font-size:12.5px;line-height:1.55;color:#4e342e;overflow-wrap:break-word}
 .sol b{display:block;margin-bottom:3px;color:#e65100;font-size:10px;text-transform:uppercase;letter-spacing:.5px}
 .expl{margin:6px 0 0 34px;background:#e3f2fd;border-left:4px solid #2196f3;padding:7px 12px;border-radius:0 5px 5px 0;font-size:12px;line-height:1.5;color:#0d47a1;display:none;overflow-wrap:break-word}
 .expl b{display:block;margin-bottom:2px;color:#1565c0;font-size:10px;text-transform:uppercase;letter-spacing:.5px}
 .q.show-expl .expl{display:block}
-.expl-btn{margin:5px 0 0 34px;background:none;border:1px solid #90caf9;border-radius:20px;color:#3f51b5;font-size:11px;padding:2px 10px;cursor:pointer}
+.expl-btn{margin:5px 0 0 34px;background:none;border:1px solid #90caf9;border-radius:20px;color:#1976d2;font-size:11px;padding:2px 10px;cursor:pointer}
 .expl-btn:hover{background:#e8eaf6}
 .hid{display:none!important}
 /* QUIZ OVERLAY */
@@ -112,7 +112,7 @@ section.ps h2 .bc{flex-shrink:0;margin-left:auto}
 .mode-cards{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:10px;padding:0 12px;width:100%;box-sizing:border-box}
 .mode-card{background:#1e1e2e;border:2px solid #333;border-radius:16px;padding:24px 20px;width:min(260px,calc(50% - 8px));min-width:140px;text-align:center;cursor:pointer;transition:all .25s;box-sizing:border-box}
 .mode-card:hover{transform:translateY(-5px);box-shadow:0 14px 40px rgba(0,0,0,.5)}
-.mode-card.reviewer-card:hover{border-color:#3f51b5}
+.mode-card.reviewer-card:hover{border-color:#1976d2}
 .mode-card.quiz-card:hover{border-color:#4caf50}
 .mode-card .icon{font-size:42px;margin-bottom:12px}
 .mode-card h2{color:#e0e0e0;font-size:18px;margin-bottom:8px}
@@ -129,16 +129,16 @@ section.ps h2 .bc{flex-shrink:0;margin-left:auto}
 .practice-bank-card .pb-count{color:#90caf9;font-size:11px;font-weight:700;margin-bottom:8px}
 .practice-bank-actions{display:flex;gap:8px;flex-wrap:wrap}
 .practice-bank-actions button{flex:1;min-width:90px;padding:6px 10px;border:none;border-radius:7px;font-size:11px;font-weight:700;cursor:pointer}
-.pb-browse{background:#283593;color:#90caf9}
-.pb-quiz{background:#1b5e20;color:#a5d6a7}
+.pb-browse{background:#0d47a1;color:#90caf9}
+.pb-quiz{background:#e65100;color:#ffcc80}
 .quiz-bank-bar{width:100%;max-width:520px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;margin-bottom:4px}
 .quiz-bank-bar label{color:#78909c;font-size:12px;font-weight:700}
 .quiz-bank-bar select{padding:8px 12px;border:2px solid #333;border-radius:8px;background:#1e1e2e;color:#90caf9;font-size:12px;font-weight:700;min-width:220px;cursor:pointer}
-.toc-practice-btn{display:block;width:calc(100% - 24px);margin:4px 12px;padding:8px 10px;border:none;border-radius:7px;background:#283593;color:#90caf9;font-size:11px;font-weight:700;cursor:pointer;text-align:left}
-.toc-practice-btn:hover{background:#3f51b5;color:#fff}
-.toc-practice-btn.active{background:#1b5e20;color:#a5d6a7}
-.reviewer-card .tag{background:#0d47a1;color:#90caf9}
-.quiz-card .tag{background:#1b5e20;color:#a5d6a7}
+.toc-practice-btn{display:block;width:calc(100% - 24px);margin:4px 12px;padding:8px 10px;border:none;border-radius:7px;background:#0d47a1;color:#90caf9;font-size:11px;font-weight:700;cursor:pointer;text-align:left}
+.toc-practice-btn:hover{background:#1976d2;color:#fff}
+.toc-practice-btn.active{background:#e65100;color:#ffcc80}
+.reviewer-card .tag{background:#1565c0;color:#90caf9}
+.quiz-card .tag{background:#e65100;color:#ffcc80}
 /* Quiz Setup */
 #quiz-setup{display:none;padding:24px 16px;max-width:740px;margin:0 auto;width:100%;box-sizing:border-box}
 #quiz-setup h2{color:#90caf9;font-size:20px;margin-bottom:16px}
@@ -146,23 +146,23 @@ section.ps h2 .bc{flex-shrink:0;margin-left:auto}
 .setup-box h3{color:#78909c;font-size:11px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px}
 .topic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(205px,100%),1fr));gap:8px;width:100%;box-sizing:border-box;overflow:hidden}
 .topic-label{display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:7px;cursor:pointer;border:1.5px solid #2a2a3e;color:#90a4ae;font-size:12.5px;transition:all .15s;user-select:none;position:relative}
-.topic-label:hover{border-color:#3f51b5;color:#90caf9;background:#0d47a111}
-.topic-label.sel{background:#0d47a133;border-color:#3f51b5;color:#90caf9;font-weight:600}
+.topic-label:hover{border-color:#1976d2;color:#90caf9;background:#1565c011}
+.topic-label.sel{background:#1565c033;border-color:#1976d2;color:#90caf9;font-weight:600}
 .topic-label .chk{width:16px;height:16px;border:2px solid #546e7a;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;transition:all .12s}
-.topic-label.sel .chk{background:#3f51b5;border-color:#3f51b5;color:#fff}
+.topic-label.sel .chk{background:#1976d2;border-color:#1976d2;color:#fff}
 .topic-label input{display:none}
 .topic-grp-hdr{grid-column:1/-1;font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:#546e7a;padding:6px 2px 2px;border-bottom:1px solid #1e1e2e;margin-top:4px;display:flex;align-items:center;justify-content:space-between}
 .topic-grp-hdr button{font-size:10px;padding:2px 8px;border-radius:4px;background:none;border:1px solid #333;color:#78909c;cursor:pointer}
-.topic-grp-hdr button:hover{background:#0d47a1;border-color:#3f51b5;color:#90caf9}
+.topic-grp-hdr button:hover{background:#1565c0;border-color:#1976d2;color:#90caf9}
 #sel-counter{font-size:12px;color:#78909c;margin-left:10px;font-weight:normal}
 #sel-counter span{color:#90caf9;font-weight:700}
 .setup-row{display:flex;gap:12px;flex-wrap:wrap}
 .setup-field{flex:1;min-width:130px;display:flex;flex-direction:column;gap:5px}
 .setup-field label{font-size:11px;color:#78909c;text-transform:uppercase;letter-spacing:.5px}
 .setup-field input,.setup-field select{background:#0d1117;border:1px solid #333;border-radius:7px;color:#e0e0e0;padding:8px 10px;font-size:13px}
-.sel-all-btn{background:none;border:1px solid #3f51b5;color:#90caf9;border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer}
-.sel-all-btn:hover{background:#0d47a1}
-.start-quiz-btn{width:100%;padding:13px;background:#2e7d32;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;margin-top:6px;letter-spacing:.3px}
+.sel-all-btn{background:none;border:1px solid #1976d2;color:#90caf9;border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer}
+.sel-all-btn:hover{background:#1565c0}
+.start-quiz-btn{width:100%;padding:13px;background:#ef6c00;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;margin-top:6px;letter-spacing:.3px}
 .start-quiz-btn:hover{background:#388e3c}
 .back-link{background:none;border:none;color:#78909c;cursor:pointer;font-size:13px;margin-bottom:14px;padding:0;display:flex;align-items:center;gap:5px}
 .back-link:hover{color:#fff}
@@ -171,12 +171,12 @@ section.ps h2 .bc{flex-shrink:0;margin-left:auto}
 .qz-header{background:#1e1e2e;border-bottom:1px solid #2a2a3e;padding:10px 20px;display:flex;align-items:center;gap:14px;flex-shrink:0}
 .qz-prog-wrap{flex:1}
 .qz-prog-bar{background:#2a2a3e;height:5px;border-radius:3px;overflow:hidden}
-.qz-prog-fill{background:linear-gradient(90deg,#3f51b5,#4caf50);height:100%;width:0%;transition:width .4s}
+.qz-prog-fill{background:linear-gradient(90deg,#1976d2,#4caf50);height:100%;width:0%;transition:width .4s}
 .qz-prog-txt{font-size:11px;color:#78909c;margin-top:3px}
-.qz-timer{background:#1a2744;border:1px solid #3f51b5;border-radius:20px;padding:3px 13px;color:#90caf9;font-weight:700;font-size:14px;min-width:56px;text-align:center;transition:all .3s}
+.qz-timer{background:#1a2744;border:1px solid #1976d2;border-radius:20px;padding:3px 13px;color:#90caf9;font-weight:700;font-size:14px;min-width:56px;text-align:center;transition:all .3s}
 .qz-timer.warn{background:#4a0000;border-color:#f44336;color:#ef9a9a;animation:pulse .5s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
-.qz-score{background:#1b4a1e;border:1px solid #4caf50;border-radius:20px;padding:3px 13px;color:#a5d6a7;font-weight:700;font-size:13px;white-space:nowrap}
+.qz-score{background:#1b4a1e;border:1px solid #4caf50;border-radius:20px;padding:3px 13px;color:#ffcc80;font-weight:700;font-size:13px;white-space:nowrap}
 .qz-end-btn{background:none;border:1px solid #b71c1c;color:#ef9a9a;border-radius:7px;padding:5px 12px;font-size:12px;cursor:pointer}
 .qz-end-btn:hover{background:#b71c1c;color:#fff}
 .qz-body{flex:1;padding:20px 14px;max-width:820px;margin:0 auto;width:100%;box-sizing:border-box}
@@ -184,7 +184,7 @@ section.ps h2 .bc{flex-shrink:0;margin-left:auto}
 .qz-qtext{font-size:17px;font-weight:600;color:#e0e0e0;line-height:1.55;margin-bottom:22px}
 .qz-choices{list-style:none;display:flex;flex-direction:column;gap:10px}
 .qz-choice{padding:13px 18px;background:#1e1e2e;border:2px solid #2a2a3e;border-radius:10px;cursor:pointer;font-size:14px;color:#cfd8dc;transition:all .2s;display:flex;align-items:flex-start;gap:12px}
-.qz-choice:hover:not(.locked){background:#283593;border-color:#3f51b5;color:#fff}
+.qz-choice:hover:not(.locked){background:#0d47a1;border-color:#1976d2;color:#fff}
 .qz-choice .qltr{background:#2a2a3e;color:#78909c;border-radius:50%;min-width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
 .qz-choice.correct{background:#1b4a1e!important;border-color:#4caf50!important;color:#c8e6c9!important}
 .qz-choice.correct .qltr{background:#4caf50;color:#fff}
@@ -197,8 +197,8 @@ section.ps h2 .bc{flex-shrink:0;margin-left:auto}
 .qz-feedback.correct{background:#1b4a1e;border:1px solid #4caf50;color:#c8e6c9;display:block}
 .qz-feedback.wrong{background:#4a0000;border:1px solid #f44336;color:#ffcdd2;display:block}
 .qz-footer{padding:14px 20px;background:#1e1e2e;border-top:1px solid #2a2a3e;display:flex;justify-content:space-between;align-items:center;max-width:820px;margin:0 auto;width:100%;flex-shrink:0}
-.qz-next-btn{background:#0d47a1;color:#fff;border:none;border-radius:8px;padding:10px 28px;font-size:14px;font-weight:700;cursor:pointer;transition:background .2s}
-.qz-next-btn:hover:not(:disabled){background:#3f51b5}
+.qz-next-btn{background:#1565c0;color:#fff;border:none;border-radius:8px;padding:10px 28px;font-size:14px;font-weight:700;cursor:pointer;transition:background .2s}
+.qz-next-btn:hover:not(:disabled){background:#1976d2}
 .qz-next-btn:disabled{background:#2a2a3e;color:#555;cursor:default}
 /* Results */
 #quiz-results{display:none;padding:36px 20px;max-width:740px;margin:0 auto;width:100%;flex-direction:column;gap:18px}
@@ -213,9 +213,9 @@ section.ps h2 .bc{flex-shrink:0;margin-left:auto}
 .res-m .lbl{font-size:11px;color:#666;text-transform:uppercase}
 .res-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:18px}
 .res-btn{padding:10px 22px;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s}
-.res-btn.primary{background:#3f51b5;color:#fff}.res-btn.primary:hover{background:#5c6bc0}
-.res-btn.success{background:#2e7d32;color:#fff}.res-btn.success:hover{background:#388e3c}
-.res-btn.outline{background:#1e1e2e;color:#90caf9;border:1px solid #3f51b5}.res-btn.outline:hover{background:#283593}
+.res-btn.primary{background:#1976d2;color:#fff}.res-btn.primary:hover{background:#5c6bc0}
+.res-btn.success{background:#ef6c00;color:#fff}.res-btn.success:hover{background:#388e3c}
+.res-btn.outline{background:#1e1e2e;color:#90caf9;border:1px solid #1976d2}.res-btn.outline:hover{background:#0d47a1}
 .res-btn.danger{background:#b71c1c;color:#fff}.res-btn.danger:hover{background:#c62828}
 .wrong-panel{background:#1e1e2e;border:1px solid #2a2a3e;border-radius:12px;overflow:hidden}
 .wrong-panel h3{padding:12px 16px;background:#4a0000;color:#ef9a9a;font-size:13px;font-weight:700}
@@ -223,12 +223,12 @@ section.ps h2 .bc{flex-shrink:0;margin-left:auto}
 .wrong-item:last-child{border-bottom:none}
 .wrong-item .wq{margin-bottom:5px;color:#e0e0e0}
 .wrong-item .wy{color:#ef9a9a;font-size:12px}
-.wrong-item .wr{color:#a5d6a7;font-size:12px}
+.wrong-item .wr{color:#ffcc80;font-size:12px}
 /* Print */
 @media print{nav#toc,.topbar,#st,#quiz-overlay,.concept-toggle,.expl-btn{display:none!important}main{margin:0}#main-content{padding:8px}.expl{display:block!important}}
 /* ── HAMBURGER BUTTON ── */
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:5px;z-index:200}
-.hamburger span{display:block;width:22px;height:2.5px;background:#3f51b5;border-radius:2px;transition:all .3s}
+.hamburger span{display:block;width:22px;height:2.5px;background:#1976d2;border-radius:2px;transition:all .3s}
 body.dark .hamburger span{background:#90caf9}
 .mob-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90}
 .mob-overlay.open{display:block}
@@ -299,14 +299,14 @@ section.ps.visible{opacity:1;transform:none}
 .bmark-btn{background:none;border:none;cursor:pointer;font-size:14px;padding:2px 4px;opacity:.25;transition:opacity .2s;flex-shrink:0;line-height:1}
 .bmark-btn:hover{opacity:1}
 .q.bookmarked .bmark-btn{opacity:1}
-.topbar .bmark-filter-btn{background:none;border:1px solid #c5cae9;border-radius:7px;padding:5px 10px;cursor:pointer;font-size:13px;transition:all .2s}
+.topbar .bmark-filter-btn{background:none;border:1px solid #bbdefb;border-radius:7px;padding:5px 10px;cursor:pointer;font-size:13px;transition:all .2s}
 .topbar .bmark-filter-btn.active{background:#fff3e0;border-color:#ff9800;color:#e65100}
 
 /* ── STREAK BADGE ── */
-.streak-wrap{display:flex;align-items:center;gap:6px;background:#f3f4ff;border:1px solid #c5cae9;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700;color:#3f51b5;white-space:nowrap;cursor:help}
+.streak-wrap{display:flex;align-items:center;gap:6px;background:#f3f4ff;border:1px solid #bbdefb;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700;color:#1976d2;white-space:nowrap;cursor:help}
 .streak-wrap.hot{background:#fff3e0;border-color:#ff9800;color:#e65100;animation:glow-streak .8s infinite alternate}
 @keyframes glow-streak{from{box-shadow:0 0 0 rgba(255,152,0,0)}to{box-shadow:0 0 8px rgba(255,152,0,.5)}}
-body.dark .streak-wrap{background:#1a1f4e;border-color:#3f51b5;color:#90caf9}
+body.dark .streak-wrap{background:#1a1f4e;border-color:#1976d2;color:#90caf9}
 body.dark .streak-wrap.hot{background:#4a1a00;border-color:#ff6d00;color:#ffab40}
 
 /* ── CONFIDENCE MODAL ── */
@@ -317,7 +317,7 @@ body.dark .streak-wrap.hot{background:#4a1a00;border-color:#ff6d00;color:#ffab40
 .conf-box p{color:#78909c;font-size:13px;margin-bottom:20px}
 .conf-btns{display:flex;gap:10px;justify-content:center}
 .conf-btn{padding:10px 22px;border:none;border-radius:8px;cursor:pointer;font-size:14px;font-weight:700;transition:all .2s}
-.conf-sure{background:#1b4a1e;color:#a5d6a7;border:2px solid #4caf50}.conf-sure:hover{background:#2e7d32}
+.conf-sure{background:#1b4a1e;color:#ffcc80;border:2px solid #4caf50}.conf-sure:hover{background:#ef6c00}
 .conf-unsure{background:#4a3000;color:#ffcc80;border:2px solid #ff9800}.conf-unsure:hover{background:#e65100}
 .conf-skip{background:#1e1e2e;color:#78909c;border:2px solid #333}.conf-skip:hover{background:#333}
 
@@ -329,8 +329,8 @@ body.dark .streak-wrap.hot{background:#4a1a00;border-color:#ff6d00;color:#ffab40
 #quiz-pause{position:absolute;inset:0;background:#0d1117ee;z-index:10;display:none;align-items:center;justify-content:center;flex-direction:column;gap:20px}
 #quiz-pause.open{display:flex}
 #quiz-pause h2{color:#90caf9;font-size:22px}
-.resume-btn{background:#0d47a1;color:#fff;border:none;border-radius:10px;padding:12px 32px;font-size:15px;font-weight:700;cursor:pointer}
-.resume-btn:hover{background:#3f51b5}
+.resume-btn{background:#1565c0;color:#fff;border:none;border-radius:10px;padding:12px 32px;font-size:15px;font-weight:700;cursor:pointer}
+.resume-btn:hover{background:#1976d2}
 
 /* ── MASTERY DASHBOARD ── */
 #dashboard-overlay{position:fixed;inset:0;background:#0d1117;z-index:997;display:none;flex-direction:column;overflow-y:auto}
@@ -349,7 +349,7 @@ body.dark .streak-wrap.hot{background:#4a1a00;border-color:#ff6d00;color:#ffab40
 .dash-section-title{color:#78909c;font-size:12px;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;font-weight:700}
 .topic-grid-dash{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
 .topic-card{background:#1e1e2e;border:1px solid #2a2a3e;border-radius:10px;padding:13px 15px;cursor:pointer;transition:border-color .2s}
-.topic-card:hover{border-color:#3f51b5}
+.topic-card:hover{border-color:#1976d2}
 .topic-card .tc-name{font-size:12.5px;color:#cfd8dc;margin-bottom:6px;font-weight:600}
 .topic-card .tc-stats{display:flex;justify-content:space-between;font-size:11px;color:#546e7a;margin-bottom:5px}
 .topic-acc-bar{background:#2a2a3e;height:5px;border-radius:3px;overflow:hidden}
@@ -363,7 +363,7 @@ body.dark .streak-wrap.hot{background:#4a1a00;border-color:#ff6d00;color:#ffab40
 .quiz-hist-table th{background:#1e1e2e;color:#78909c;font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding:8px 12px;text-align:left;border-bottom:1px solid #2a2a3e}
 .quiz-hist-table td{padding:8px 12px;border-bottom:1px solid #2a2a3e;color:#cfd8dc}
 .quiz-hist-table tr:hover td{background:#1e1e2e22}
-.pass-pill{background:#1b4a1e;color:#a5d6a7;border-radius:20px;padding:2px 9px;font-size:10px;font-weight:700}
+.pass-pill{background:#1b4a1e;color:#ffcc80;border-radius:20px;padding:2px 9px;font-size:10px;font-weight:700}
 .fail-pill{background:#4a0000;color:#ef9a9a;border-radius:20px;padding:2px 9px;font-size:10px;font-weight:700}
 .reset-data-btn{background:none;border:1px solid #b71c1c;color:#ef9a9a;border-radius:7px;padding:7px 18px;cursor:pointer;font-size:12px}
 .reset-data-btn:hover{background:#b71c1c;color:#fff}
@@ -376,28 +376,23 @@ body.dark .streak-wrap.hot{background:#4a1a00;border-color:#ff6d00;color:#ffab40
 nav#toc li a{display:flex;align-items:center}
 
 /* ── PWA INSTALL BANNER ── */
-#pwa-banner{display:none;position:fixed;bottom:16px;right:16px;background:#0d47a1;color:#90caf9;border:1px solid #3f51b5;border-radius:10px;padding:12px 16px;z-index:500;font-size:13px;max-width:260px;box-shadow:0 4px 20px rgba(0,0,0,.3)}
-#pwa-banner button{background:#3f51b5;color:#fff;border:none;border-radius:6px;padding:5px 12px;margin-top:8px;cursor:pointer;font-size:12px;width:100%}
+#pwa-banner{display:none;position:fixed;bottom:16px;right:16px;background:#1565c0;color:#90caf9;border:1px solid #1976d2;border-radius:10px;padding:12px 16px;z-index:500;font-size:13px;max-width:260px;box-shadow:0 4px 20px rgba(0,0,0,.3)}
+#pwa-banner button{background:#1976d2;color:#fff;border:none;border-radius:6px;padding:5px 12px;margin-top:8px;cursor:pointer;font-size:12px;width:100%}
 </style>
 </head>
 <body>
 <div class="mob-overlay" id="mob-overlay" onclick="closeSidebar()"></div>
-<nav id="toc"><div class="toc-scroll"><h2 style="padding:12px 16px 10px;border-bottom:1px solid rgba(255,255,255,.2);font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#90caf9">⚡ DC Circuits Navigation</h2><ul id="toc-list"></ul>
+<nav id="toc"><div class="toc-scroll"><h2 style="padding:12px 16px 10px;border-bottom:1px solid rgba(255,255,255,.2);font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#90caf9">⚡ Circuits Navigation</h2><ul id="toc-list"></ul>
+<ul id="toc-formulas" style="list-style:none;padding:6px 0"></ul>
 <ul id="toc-materials" style="list-style:none;padding:6px 0">
-<li class="gh"><a href="#">LECTURE SLIDES</a></li>
-<li><a href="materials/slide_0001.jpg" target="_blank" rel="noopener">Title — DC Circuits Part 1</a></li>
-<li><a href="materials/slide_0002.jpg" target="_blank" rel="noopener">Ohm's Law</a></li>
-<li><a href="materials/slide_0010.jpg" target="_blank" rel="noopener">Series Circuit Properties</a></li>
-<li><a href="materials/slide_0012.jpg" target="_blank" rel="noopener">Parallel Circuit Properties</a></li>
-<li><a href="materials/slide_0030.jpg" target="_blank" rel="noopener">Electrical Networks</a></li>
-<li><a href="materials/slide_0035.jpg" target="_blank" rel="noopener">Open &amp; Short Circuits</a></li>
-<li><a href="materials/slide_0040.jpg" target="_blank" rel="noopener">Source Transformation</a></li>
-<li><a href="materials/slide_0045.jpg" target="_blank" rel="noopener">Voltage Division</a></li>
-<li><a href="materials/slide_0055.jpg" target="_blank" rel="noopener">Network Theorems</a></li>
-<li><a href="materials/slide_0070.jpg" target="_blank" rel="noopener">Thévenin's Theorem (Sample)</a></li>
+<li class="gh"><a href="#">LECTURE VIDEOS</a></li>
+<li><a href="materials/ELECTRICAL_CIRCUITS_1_(PART_1)_(2).mp4" target="_blank" rel="noopener">📹 Part 1 Video (MP4)</a></li>
+<li><a href="materials/ELECTRICAL_CIRCUITS_1_(PART_2)_(2).mp4" target="_blank" rel="noopener">📹 Part 2 Video (MP4)</a></li>
 </ul></div>
 <div class="toc-btns">
 <button class="btn-reviewer" onclick="showReviewer()">📖 Reviewer</button>
+<button class="btn-reviewer" style="background:#0d47a1;color:#90caf9" onclick="showFormulaBank()">📐 Formula Bank</button>
+<button class="btn-reviewer" style="background:#006064;color:#b2ebf2" onclick="showLectureNotes()">📝 Lecture Text</button>
 <button class="btn-quiz" onclick="openQuizBee()">🎯 Quiz Bee</button>
 <button class="btn-reviewer" onclick="openDashboard()">📊 Dashboard</button>
 <button class="btn-dark" onclick="toggleDark()">🌙 Dark Mode</button>
@@ -405,24 +400,27 @@ nav#toc li a{display:flex;align-items:center}
 <main>
 <div class="topbar">
   <button class="hamburger" id="hamburger-btn" onclick="toggleSidebar()" aria-label="Menu"><span></span><span></span><span></span></button>
-  <span class="mode-badge">⚡ DC CIRCUITS</span>
+  <span class="mode-badge">⚡ CIRCUITS 1</span>
   <select id="bank-select" style="display:none" aria-label="Question bank" onchange="switchBank(this.value,{browse:true})" title="Switch question bank">
-    <option value="reviewer">⚖️ DC Circuits Reviewer</option>
+    <option value="reviewer">⚖️ Circuits 1</option>
   </select>
-  <input type="text" id="searchBox" placeholder="🔍 Search questions..." oninput="filterQ(this.value)">
+  <input type="text" id="searchBox" placeholder="🔍 Search questions or formulas..." oninput="filterQ(this.value)">
   <span id="mc"></span>
   <button class="bmark-filter-btn topbar" onclick="filterBookmarked()" title="Bookmarked only">🔖</button>
   <span class="streak-wrap" id="streak-disp" title="Streak">⚡ 0</span>
-  <button style="background:#1b5e20;color:#a5d6a7;border:none;border-radius:7px;padding:6px 13px;cursor:pointer;font-size:13px;font-weight:700;white-space:nowrap" onclick="openQuizBee()">🎯 Quiz Bee</button>
+  <button style="background:#e65100;color:#ffcc80;border:none;border-radius:7px;padding:6px 13px;cursor:pointer;font-size:13px;font-weight:700;white-space:nowrap" onclick="openQuizBee()">🎯 Quiz Bee</button>
 </div>
 <div class="main-content">
 <div id="st">
-  <div class="stat"><div class="sn" id="bank-label">DC Circuits Reviewer</div><div class="sl">Active Bank</div></div>
+  <div class="stat"><div class="sn" id="bank-label">Circuits 1</div><div class="sl">Active Bank</div></div>
   <div class="stat"><div class="sn" id="total-qs">—</div><div class="sl">Questions</div></div>
-  <div class="stat"><div class="sn" id="topic-count">13</div><div class="sl">Sections</div></div>
+  <div class="stat"><div class="sn" id="formula-count">—</div><div class="sl">Formulas</div></div>
+  <div class="stat"><div class="sn" id="topic-count">10</div><div class="sl">Sections</div></div>
   <div class="stat"><div class="sn" id="bank-ver" style="font-size:13px">—</div><div class="sl">Bank Version</div></div>
 </div>
-<p style="margin-bottom:16px;line-height:1.55;color:#555;font-size:13px" id="bank-desc">Electrical Circuits 1 (Part 1) — Direct Current Circuits. MCQs from the lecture video (Ohm’s Law through network theorems). Open <strong>Lecture Slides</strong> in the sidebar for key frames.</p>
+<p style="margin-bottom:16px;line-height:1.55;color:#555;font-size:13px" id="bank-desc">Electrical Circuits 1 (Parts 1 &amp; 2) — MCQs, compiled <strong>Formula Bank</strong>, and full lecture transcript. Use sidebar to jump between topics and formulas.</p>
+<div id="formula-sections" style="display:none"></div>
+<div id="lecture-sections" style="display:none"></div>
 <div id="review-sections"></div>
 </div></main>
 
@@ -447,17 +445,29 @@ nav#toc li a{display:flex;align-items:center}
     <div class="quiz-bank-bar" style="display:none">
       <label for="quiz-bank-select">Question bank</label>
       <select id="quiz-bank-select" aria-label="Question bank" onchange="switchBank(this.value,{quiz:true})">
-        <option value="reviewer">⚖️ DC Circuits Reviewer</option>
+        <option value="reviewer">⚖️ Circuits 1</option>
       </select>
     </div>
-    <h1>⚡ Electrical Circuits 1 — DC</h1>
-    <p class="sub">Offline reviewer for <strong>Direct Current Circuits</strong> — Ohm’s Law, series/parallel, source transformation, KCL/KVL, Thévenin &amp; network theorems.</p>
+    <h1>⚡ Electrical Circuits 1</h1>
+    <p class="sub"><strong>Electrical Circuits 1</strong> — Ohm's law, series &amp; parallel circuits, KVL, KCL, mesh &amp; nodal analysis. Includes <strong>Formula Bank</strong> and full lecture text from Parts 1 &amp; 2.</p>
     <div class="mode-cards">
       <div class="mode-card reviewer-card" onclick="showReviewer()">
         <div class="icon">📖</div>
         <h2>Reviewer</h2>
-        <p>Browse all questions with correct answers, rationales, and lecture references.</p>
+        <p>Browse MCQs with solutions tied to circuit laws and analysis methods.</p>
         <span class="tag">Self-paced Review</span>
+      </div>
+      <div class="mode-card" style="border-color:#1565c0" onclick="closeQuizOverlay();showFormulaBank()">
+        <div class="icon">📐</div>
+        <h2>Formula Bank</h2>
+        <p>Compiled formulas — Ohm's law, KVL, KCL, dividers, mesh/nodal — with variables and examples.</p>
+        <span class="tag" style="background:#0d47a1;color:#90caf9">Quick Reference</span>
+      </div>
+      <div class="mode-card" style="border-color:#00838f" onclick="closeQuizOverlay();showLectureNotes()">
+        <div class="icon">📝</div>
+        <h2>Lecture Text</h2>
+        <p>Full transcript from Parts 1 &amp; 2 — searchable, section by section with timestamps.</p>
+        <span class="tag" style="background:#006064;color:#b2ebf2">From Video</span>
       </div>
       <div class="mode-card quiz-card" onclick="showSetup()">
         <div class="icon">🎯</div>
@@ -487,7 +497,7 @@ nav#toc li a{display:flex;align-items:center}
     <p style="color:#78909c;font-size:13px;margin-bottom:14px">Bank: <strong id="quiz-bank-label" style="color:#90caf9">Study Reviewer</strong></p>
     <div class="quiz-bank-bar" style="justify-content:flex-start;margin-bottom:14px">
       <label for="quiz-setup-bank-select">Switch bank</label>
-      <select id="quiz-setup-bank-select" style="display:none"><option value="reviewer">DC Circuits Reviewer</option></select>
+      <select id="quiz-setup-bank-select" style="display:none"><option value="reviewer">Circuits 1</option></select>
     </div>
     <div class="setup-box">
       <h3>Topics <span id="sel-counter"><span id="sel-count-num">11</span> / 11 topics selected</span>&nbsp;&nbsp;<button class="sel-all-btn" onclick="selectAllTopics(true)">&#10003; All</button>&nbsp;<button class="sel-all-btn" onclick="selectAllTopics(false)">&#9633; None</button></h3>
@@ -633,22 +643,27 @@ nav#toc li a{display:flex;align-items:center}
 
 
 <script src="version.js"></script>
+<script src="formulas.js"></script>
+<script src="lecture-notes.js"></script>
 <script src="questions.js"></script>
 <script>
 var ACTIVE_BANK='reviewer';
 var LOADED_BANKS={reviewer:true};
+var FORMULA_VIEW=false;
+var LECTURE_VIEW=false;
 var BANK_DEFS={
   reviewer:{
-    label:'DC Circuits Reviewer',
-    short:'DC',
-    desc:'Electrical Circuits 1 (Part 1) — Direct Current Circuits from the lecture video.',
-    global:'CIRCUITS_DC_QB',
+    label:'Circuits 1',
+    short:'Circuits',
+    desc:'Electrical Circuits 1 — Parts 1 & 2 video lectures + formula bank + MCQs.',
+    global:'CIRCUITS_QB',
     file:null,
     groups:[
-      {grp:'Fundamentals',sids:['ohms-law','power','series','parallel','series-parallel']},
-      {grp:'Network Analysis',sids:['circuit-elements','networks','open-short','source-xform','v-div','k-laws','thevenin','network-thms']}
+      {grp:'Fundamentals',sids:['basic','ohm','series','parallel']},
+      {grp:'Circuit Laws',sids:['kvl','kcl','mesh','nodal']},
+      {grp:'Advanced',sids:['divider','wye']}
     ],
-    order:['ohms-law','power','series','parallel','series-parallel','circuit-elements','networks','open-short','source-xform','v-div','k-laws','thevenin','network-thms']
+    order:['basic','ohm','series','parallel','kvl','kcl','mesh','nodal','divider','wye']
   }
 };
 
@@ -678,7 +693,7 @@ function switchBank(bankId, opts){
     return;
   }
   ACTIVE_BANK=bankId;
-  try{localStorage.setItem('circuits_dc_active_bank',bankId);}catch(e){}
+  try{localStorage.setItem('circuits_active_bank',bankId);}catch(e){}
   var loading=el('bank-label');
   if(loading) loading.textContent='Loading '+BANK_DEFS[bankId].label+'…';
   loadBankScript(bankId,function(){
@@ -726,13 +741,20 @@ function updateBankUi(){
   var bd=el('bank-desc');if(bd)bd.innerHTML=d.desc;
   var n=bankRaw().length;
   var tq=el('total-qs');if(tq)tq.textContent=n||'…';
+  var fc=el('formula-count');if(fc)fc.textContent=(window.CIRCUITS_FORMULAS||[]).length||'—';
   var tc=el('topic-count');if(tc)tc.textContent=getSectionOrder().length;
   var ver=el('bank-ver');if(ver)ver.textContent=window.APP_BANK_VERSION||'';
 }
 
 function showReviewer(){
+  FORMULA_VIEW=false;LECTURE_VIEW=false;
+  hideAllViews();
+  var rs=el('review-sections');if(rs)rs.style.display='block';
   closeDashboard();
   closeQuizOverlay();
+  var d=BANK_DEFS[ACTIVE_BANK];
+  var bd=el('bank-desc');if(bd)bd.innerHTML=d.desc;
+  refreshBankView();
   window.scrollTo(0,0);
 }
 
@@ -773,6 +795,8 @@ function updateTocForBank(){
 
 function refreshBankView(){
   rebuildMasterQ();
+  buildFormulaToc();
+
   renderReviewer();
   buildBank();
   applyAllBookmarks();
@@ -924,13 +948,13 @@ var STATE={qh:{},qz:[],streak:0,best:0};
 
 function loadState(){
   try{
-    var s=JSON.parse(localStorage.getItem('circuits_dc_board')||'{}');
+    var s=JSON.parse(localStorage.getItem('circuits_board')||'{}');
     STATE.qh=s.qh||{}; STATE.qz=s.qz||[];
     STATE.streak=s.streak||0; STATE.best=s.best||0;
   }catch(e){}
 }
 function saveState(){
-  try{localStorage.setItem('circuits_dc_board',JSON.stringify(STATE));}catch(e){}
+  try{localStorage.setItem('circuits_board',JSON.stringify(STATE));}catch(e){}
 }
 function getQStats(id){return STATE.qh[id]||{a:0,c:0,b:false};}
 function recordQAnswer(id,correct,conf){
@@ -950,6 +974,26 @@ function recordQAnswer(id,correct,conf){
    ============================================================ */
 function filterQ(v){
   v=v.toLowerCase().trim();
+  if(FORMULA_VIEW){
+    document.querySelectorAll('#formula-sections .concept-card').forEach(function(c){
+      var m=!v||c.textContent.toLowerCase().includes(v);
+      c.style.display=m?'':'none';
+    });
+    return;
+  }
+  if(LECTURE_VIEW){
+    document.querySelectorAll('#lecture-sections p').forEach(function(p){
+      var sec=p.closest('section');
+      if(!v){p.classList.remove('hid');if(sec)sec.classList.remove('hid');return;}
+      var m=p.textContent.toLowerCase().includes(v);
+      p.classList.toggle('hid',!m);
+    });
+    document.querySelectorAll('#lecture-sections section.ps').forEach(function(sec){
+      var any=!v||sec.querySelector('p:not(.hid)');
+      sec.classList.toggle('hid',!any);
+    });
+    return;
+  }
   var qs=document.querySelectorAll('.q'),n=0;
   var bmarkOnly=document.querySelector('.bmark-filter-btn')&&document.querySelector('.bmark-filter-btn').classList.contains('active');
   qs.forEach(function(q){
@@ -963,7 +1007,7 @@ function filterQ(v){
 }
 function toggleDark(){
   document.body.classList.toggle('dark');
-  localStorage.setItem('circuits_dc_dark',document.body.classList.contains('dark')?'1':'0');
+  localStorage.setItem('circuits_dark',document.body.classList.contains('dark')?'1':'0');
 }
 function toggleConcept(btn){
   var body=btn.nextElementSibling;
@@ -1622,7 +1666,7 @@ function renderRadar(data){
     ctx.fillText(short,lx,ly+3);
   });
   // Data polygon
-  ctx.beginPath();ctx.strokeStyle='#3f51b5';ctx.lineWidth=2;ctx.fillStyle='rgba(63,81,181,.2)';
+  ctx.beginPath();ctx.strokeStyle='#1976d2';ctx.lineWidth=2;ctx.fillStyle='rgba(63,81,181,.2)';
   data.forEach(function(d,i){
     var a=i*angleStep-Math.PI/2,v=d.pct/100;
     var x=cx+Math.cos(a)*r*v,y=cy+Math.sin(a)*r*v;
@@ -1697,13 +1741,140 @@ document.addEventListener('keydown',function(e){
   }
 });
 
+
+function hideAllViews(){
+  var rs=el('review-sections');var fs=el('formula-sections');var ls=el('lecture-sections');
+  if(rs)rs.style.display='none';if(fs)fs.style.display='none';if(ls)ls.style.display='none';
+}
+
+function showLectureNotes(){
+  FORMULA_VIEW=false;LECTURE_VIEW=true;
+  closeQuizOverlay();closeDashboard();
+  hideAllViews();
+  var ls=el('lecture-sections');if(ls)ls.style.display='block';
+  var bd=el('bank-desc');
+  if(bd)bd.innerHTML='📝 <strong>Lecture Text</strong> — full transcript from Parts 1 & 2. Search filters lines below.';
+  renderLectureNotes();
+  window.scrollTo(0,0);
+}
+
+function renderLectureNotes(){
+  var root=el('lecture-sections');if(!root)return;
+  var data=window.CIRCUITS_LECTURE||{};
+  var notes=data.notes||[];
+  if(!notes.length){
+    root.innerHTML='<section class="ps visible"><h2>Lecture Text</h2><div class="psi"><p style="line-height:1.6;color:#555">'+
+      escapeHtml(data.status||'Transcript not ready yet. The video is being transcribed — check back soon or run scripts locally.')+
+      '</p></div></section>';
+    return;
+  }
+  root.innerHTML='';
+  var hdr=document.createElement('section');
+  hdr.className='ps visible';
+  hdr.innerHTML='<h2>Full Lecture Transcript <span class="bc">'+notes.length+' sections · '+data.segmentCount+' lines</span></h2>';
+  var psi=document.createElement('div');psi.className='psi';
+  psi.innerHTML='<p style="margin-bottom:12px;color:#555;line-height:1.55">Source: <strong>'+escapeHtml(data.source||'Video')+'</strong>. All spoken text copied from the lecture.</p>';
+  hdr.appendChild(psi);root.appendChild(hdr);
+  notes.forEach(function(n,idx){
+    var sec=document.createElement('section');
+    sec.className='ps visible';sec.id=n.id;
+    sec.innerHTML='<h2><span style="opacity:.85;margin-right:8px">'+escapeHtml(n.time)+'</span> Section '+(idx+1)+'</h2>';
+    var body=document.createElement('div');body.className='psi';
+    (n.paragraphs||[n.text]).forEach(function(p){
+      var pEl=document.createElement('p');
+      pEl.style.cssText='margin-bottom:10px;line-height:1.65;font-size:13px';
+      pEl.textContent=p;
+      body.appendChild(pEl);
+    });
+    sec.appendChild(body);root.appendChild(sec);
+  });
+}
+
+/* ============================================================
+   FORMULA BANK
+   ============================================================ */
+function getFormulas(){return window.CIRCUITS_FORMULAS||[];}
+
+function buildFormulaToc(){
+  var ul=document.getElementById('toc-formulas');
+  if(!ul)return;
+  var bySec={},order=[];
+  getFormulas().forEach(function(f){
+    var sid=f.section;
+    if(!bySec[sid]){bySec[sid]={title:f.secTitle||sid,items:[]};order.push(sid);}
+    bySec[sid].items.push(f);
+  });
+  var html='<li class="gh"><a href="#">FORMULA BANK</a></li>';
+  order.forEach(function(sid){
+    html+='<li class="gh"><a href="#">'+escapeHtml(bySec[sid].title)+'</a></li>';
+    bySec[sid].items.forEach(function(f){
+      html+='<li><a href="#'+f.id+'" onclick="showFormulaBank(\''+f.id+'\')">'+escapeHtml(f.name)+'</a></li>';
+    });
+  });
+  ul.innerHTML=html;
+}
+
+function renderFormulaBank(highlightId){
+  var root=document.getElementById('formula-sections');
+  if(!root)return;
+  root.innerHTML='';
+  var bySec={};
+  getFormulas().forEach(function(f){
+    if(!bySec[f.section])bySec[f.section]=[];
+    bySec[f.section].push(f);
+  });
+  getSectionOrder().forEach(function(sid){
+    var list=bySec[sid];
+    if(!list||!list.length)return;
+    var sec=document.createElement('section');
+    sec.className='ps visible';
+    sec.id='fs-'+sid;
+    sec.innerHTML='<h2>'+escapeHtml(list[0].secTitle||sid)+' <span class="bc">'+list.length+' Formulas</span></h2>';
+    var psi=document.createElement('div');
+    psi.className='psi';
+    list.forEach(function(f){
+      var card=document.createElement('div');
+      card.className='concept-card';
+      card.id=f.id;
+      var vars=(f.vars||[]).map(function(v){return '<li><code>'+escapeHtml(v.sym)+'</code> — '+escapeHtml(v.desc)+'</li>';}).join('');
+      card.innerHTML='<button class="concept-toggle" onclick="toggleConcept(this)"><span>'+escapeHtml(f.name)+'</span><span class="cc-arrow">▼</span></button>'+
+        '<div class="concept-body open"><div class="formula-row"><div class="formula-box">'+escapeHtml(f.formula)+'</div></div>'+
+        (vars?'<h4>Variables</h4><ul>'+vars+'</ul>':'')+
+        (f.notes?'<h4>Notes</h4><p>'+escapeHtml(f.notes)+'</p>':'')+
+        (f.example?'<h4>Example</h4><p>'+escapeHtml(f.example)+'</p>':'')+
+        '</div>';
+      psi.appendChild(card);
+    });
+    sec.appendChild(psi);
+    root.appendChild(sec);
+  });
+  if(highlightId){
+    var el=document.getElementById(highlightId);
+    if(el){el.scrollIntoView({behavior:'smooth',block:'start'});el.style.outline='2px solid #1976d2';}
+  }
+}
+
+function showFormulaBank(highlightId){
+  FORMULA_VIEW=true;LECTURE_VIEW=false;
+  closeQuizOverlay();
+  closeDashboard();
+  hideAllViews();
+  document.getElementById('formula-sections').style.display='block';
+  var bd=el('bank-desc');
+  if(bd)bd.innerHTML='📐 <strong>Formula Bank</strong> — compiled Electrical Circuits 1 formulas. Click any card to expand. Search filters in current view.';
+  renderFormulaBank(highlightId);
+  buildFormulaToc();
+  window.scrollTo(0,0);
+}
+
+
 /* ============================================================
    INIT
    ============================================================ */
 document.addEventListener('DOMContentLoaded',function(){
   loadState();
-  if(localStorage.getItem('circuits_dc_dark')==='1') document.body.classList.add('dark');
-  var savedBank=localStorage.getItem('circuits_dc_active_bank');
+  if(localStorage.getItem('circuits_dark')==='1') document.body.classList.add('dark');
+  var savedBank=localStorage.getItem('circuits_active_bank');
   if(savedBank&&BANK_DEFS[savedBank])ACTIVE_BANK=savedBank;
   function boot(){
     rebuildMasterQ();
@@ -1713,6 +1884,8 @@ document.addEventListener('DOMContentLoaded',function(){
     syncBankSelects();
     var h=(location.hash||'').toLowerCase();
     if(h==='#quiz'||h==='#quizbee'){ openQuizBee(); }
+    else if(h==='#formulas'||h==='#formula'){ showFormulaBank(); }
+    else if(h==='#lecture'||h==='#notes'||h==='#text'){ showLectureNotes(); }
     else if(h==='#dashboard'){ closeQuizOverlay(); openDashboard(); }
     else { showReviewer(); }
   }

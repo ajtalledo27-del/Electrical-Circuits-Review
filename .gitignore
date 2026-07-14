@@ -1,5 +1,11 @@
-_work/
-*.wav
-__pycache__/
 .DS_Store
 Thumbs.db
+*.log
+__pycache__/
+*.pyc
+.cursor/
+_work/
+materials/*.mp4
+materials/chunks/
+materials/*.wav
+materials/transcribe.log

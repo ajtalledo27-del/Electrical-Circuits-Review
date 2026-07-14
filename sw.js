@@ -1,8 +1,10 @@
-const CACHE = 'circuits-dc-v1';
+const CACHE = 'circuits1-v1';
 const PRECACHE = [
   './',
   './index.html',
   './questions.js',
+  './formulas.js',
+  './lecture-notes.js',
   './bank.json',
   './banks-manifest.json',
   './version.js',
@@ -27,43 +29,15 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
-  if (!e.request.url.startsWith(self.location.origin)) return;
-
-  const url = new URL(e.request.url);
-  const bust = [
-    'questions.js',
-    'bank.json',
-    'banks-manifest.json',
-    'version.js',
-  ].some((p) => url.pathname.endsWith(p));
-
-  if (bust) {
-    e.respondWith(
-      fetch(e.request)
-        .then((res) => {
-          if (res && res.status === 200) {
-            const copy = res.clone();
-            caches.open(CACHE).then((c) => c.put(e.request, copy));
-          }
-          return res;
-        })
-        .catch(() => caches.match(e.request))
-    );
-    return;
-  }
-
   e.respondWith(
     caches.match(e.request).then((cached) => {
       if (cached) return cached;
-      return fetch(e.request)
-        .then((res) => {
-          if (res && res.status === 200 && res.type === 'basic') {
-            const copy = res.clone();
-            caches.open(CACHE).then((c) => c.put(e.request, copy));
-          }
-          return res;
-        })
-        .catch(() => caches.match('./index.html'));
+      return fetch(e.request).then((res) => {
+        if (!res || res.status !== 200 || res.type !== 'basic') return res;
+        const clone = res.clone();
+        caches.open(CACHE).then((c) => c.put(e.request, clone));
+        return res;
+      });
     })
   );
 });

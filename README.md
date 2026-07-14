@@ -1,54 +1,57 @@
-# Electrical Circuits 1 — Reviewer & Quiz Bee (DC Part 1)
-
-Offline reviewer for **Electrical Circuits 1 (Part 1) — Direct Current Circuits**
-
-**Source lecture:** `ELECTRICAL_CIRCUITS_1_(PART_1)_(2).mp4
+# Electrical Circuits 1 — Reviewer, Formula Bank & Lecture Text
 
 **Live:** https://ajtalledo27-del.github.io/Electrical-Circuits-Review/
+
+Offline reviewer for **Electrical Circuits 1 (Parts 1 & 2)** — DC circuits, Ohm's law, KVL/KCL, mesh & nodal analysis.
+
+**Source lectures:**
+- `ELECTRICAL_CIRCUITS_1_(PART_1)_(2).mp4`
+- `ELECTRICAL_CIRCUITS_1_(PART_2)_(2).mp4`
+
+## App sections
+
+| Section | Description |
+|---------|-------------|
+| **📝 Lecture Text** | Full transcript from Part 1 & Part 2 videos (3,751 lines) |
+| **📐 Formula Bank** | 19 compiled formulas with variables & examples |
+| **📖 Reviewer** | MCQs with solutions |
+| **🎯 Quiz Bee** | Timed practice + dashboard |
+
 ## Question bank
 
 | Bank | Source | Items |
 |------|--------|------:|
-| **DC Circuits Reviewer** | Electrical Circuits 1 (Part 1) lecture video | 173 |
+| **Circuits 1** | Video lectures + standard EC1 coverage | 37 |
 
-## Topics (filter in Quiz Bee or browse by section)
+## Topics
 
-| Topic | Focus | Items (approx.) |
-|-------|--------|------:|
-| **1 — Ohm's Law** | I = V/R, proportionality | 15 |
-| **2 — Power & Ohm's Law** | P = VI, I²R, V²/R | 14 |
-| **3 — Series Circuits** | RT = ΣR, same current | 14 |
-| **4 — Parallel Circuits** | 1/RT = Σ(1/R), same voltage | 14 |
-| **5 — Series-Parallel & Req** | Reduction + sample problems | 14 |
-| **6 — Circuit Elements & Sources** | Independent / dependent sources | 12 |
-| **7 — Electrical Networks** | Branch, node, loop | 12 |
-| **8 — Open & Short Circuits** | R → 0 / R → ∞ | 12 |
-| **9 — Source Transformation** | vs series R ↔ is ∥ R | 12 |
-| **10 — Voltage Division** | Series divider formulas | 12 |
-| **11 — Kirchhoff's Laws** | KCL, KVL, mesh systems | 14 |
-| **12 — Thévenin's Theorem** | VTh, RTh, load current | 14 |
-| **13 — Network Theorems Overview** | Norton, superposition, nodal | 14 |
+| Section | Focus |
+|---------|--------|
+| Basic Concepts | Voltage, current, power, energy |
+| Ohm's Law | V = IR, conductance |
+| Series & Parallel | Equivalent resistance, current/voltage rules |
+| KVL & KCL | Loop and node laws |
+| Mesh & Nodal Analysis | Systematic circuit analysis |
+| Dividers & Wye-Delta | Voltage/current dividers, bridge balance |
 
-Key lecture slides are in `materials/` and linked in the app sidebar. MCQs include definitions plus worked-sample values from the video (e.g. parallel Req, sample problems 3–12, Thévenin 4.8 V / 2.4 Ω / 1.5 A).
-
-## Features
-
-- **Reviewer** — Browse questions with answers, rationales, and references
-- **Quiz Bee** — Timer, spaced repetition, confidence tracking, bookmarks
-- **Dashboard** — Topic mastery radar, accuracy breakdown, quiz history
-- **PWA** — Installable for offline use
-
-## Regenerate bank
+## Regenerate all text from videos
 
 ```bash
+python scripts/transcribe_video.py
+python scripts/build_lecture_notes.py
 python scripts/build_circuits_bank.py
+python scripts/patch_index.py
 ```
+
+Videos stay in `materials/` locally (too large for GitHub). **Lecture text** is committed as `lecture-notes.js` + `materials/transcript.txt`.
 
 ## Deploy
 
-Push to `main`, enable GitHub Pages (root). Hard-refresh after updates (`circuits-dc-v1-2026`).
+Push to `main` — GitHub Pages is already enabled on this repo.
 
 ```powershell
 cd C:\Users\User\Electrical-Circuits-Review
-.\scripts\push-to-github.bat
+git add -A
+git commit -m "Update"
+git push
 ```

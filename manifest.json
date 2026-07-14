@@ -1,37 +1,17 @@
 {
-  "id": "electrical-circuits-dc-2026",
-  "name": "Electrical Circuits 1 — DC Reviewer",
-  "short_name": "DC Circuits",
-  "description": "Electrical Circuits 1 (Part 1) Direct Current Circuits reviewer and quiz bee",
+  "id": "circuits1-review",
+  "name": "Electrical Circuits 1",
+  "short_name": "Circuits",
+  "description": "Electrical Circuits 1 reviewer, formula bank, lecture text, and quiz bee",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "dir": "ltr",
+  "theme_color": "#1565c0",
   "background_color": "#0d1117",
-  "theme_color": "#0d47a1",
-  "orientation": "any",
-  "lang": "en",
-  "categories": ["education"],
-  "icons": [
-    {
-      "src": "./icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    }
-  ],
+  "icons": [{ "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml" }],
   "shortcuts": [
-    {
-      "name": "Quiz Bee",
-      "short_name": "Quiz",
-      "description": "Jump straight into a quiz",
-      "url": "./index.html#quiz"
-    },
-    {
-      "name": "Dashboard",
-      "short_name": "Stats",
-      "description": "View mastery dashboard",
-      "url": "./index.html#dashboard"
-    }
+    { "name": "Formula Bank", "url": "./index.html#formulas" },
+    { "name": "Lecture Text", "url": "./index.html#lecture" },
+    { "name": "Quiz Bee", "url": "./index.html#quiz" }
   ]
 }
