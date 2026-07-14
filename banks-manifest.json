@@ -1,0 +1,12 @@
+{
+  "version": "circuits-dc-v1-2026",
+  "banks": {
+    "reviewer": {
+      "label": "DC Circuits Reviewer",
+      "file": "questions.js",
+      "global": "CIRCUITS_DC_QB",
+      "description": "Electrical Circuits 1 (Part 1) \u2014 Direct Current Circuits",
+      "count": 173
+    }
+  }
+}

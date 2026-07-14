@@ -1,0 +1,37 @@
+{
+  "id": "electrical-circuits-dc-2026",
+  "name": "Electrical Circuits 1 — DC Reviewer",
+  "short_name": "DC Circuits",
+  "description": "Electrical Circuits 1 (Part 1) Direct Current Circuits reviewer and quiz bee",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "dir": "ltr",
+  "background_color": "#0d1117",
+  "theme_color": "#0d47a1",
+  "orientation": "any",
+  "lang": "en",
+  "categories": ["education"],
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Quiz Bee",
+      "short_name": "Quiz",
+      "description": "Jump straight into a quiz",
+      "url": "./index.html#quiz"
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Stats",
+      "description": "View mastery dashboard",
+      "url": "./index.html#dashboard"
+    }
+  ]
+}
