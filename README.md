@@ -3,7 +3,7 @@
 Offline reviewer for **Electrical Circuits 1 (Part 1) — Direct Current Circuits**
 
 **Source lecture:** `ELECTRICAL_CIRCUITS_1_(PART_1)_(2).mp4`
-
+**Live:** https://ajtalledo27-del.github.io/Electrical-Circuits-Review/
 ## Question bank
 
 | Bank | Source | Items |
